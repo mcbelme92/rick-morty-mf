@@ -46,8 +46,9 @@ module.exports = {
         detail: "detail@http://localhost:3002/remoteEntry.js",
       },
       shared: {
-        react: { singleton: true, eager: true },
-        "react-dom": { singleton: true, eager: true },
+        react: { singleton: true, requiredVersion: false },
+        "react-dom": { singleton: true, requiredVersion: false },
+        "react-router-dom": { singleton: true, requiredVersion: false },
       },
     }),
     new HtmlWebpackPlugin({
