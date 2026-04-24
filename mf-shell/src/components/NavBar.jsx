@@ -5,7 +5,7 @@ export default function Navbar() {
     document.documentElement.classList.toggle("dark");
   };
   return (
-    <header className="py-4 bg-white dark:bg-slate-800 sticky top-0 z-10 shadow-lg">
+    <header className="py-4 bg-gray-100 dark:bg-slate-800 sticky top-0 z-10 shadow-lg">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}

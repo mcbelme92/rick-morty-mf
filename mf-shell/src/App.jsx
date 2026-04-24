@@ -1,7 +1,9 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-const USE_MF = false;
+import "./index.css";
+
+const USE_MF = true;
 
 let CharactersApp;
 let DetailApp;
@@ -17,7 +19,7 @@ if (USE_MF) {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Layout>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
