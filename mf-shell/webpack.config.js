@@ -16,9 +16,10 @@ module.exports = {
     client: {
       overlay: false,
     },
+    watchFiles: ["src/**/*"],
   },
   output: {
-    publicPath: "auto",
+    publicPath: "/",
   },
   resolve: {
     extensions: [".js", ".jsx"],
@@ -45,8 +46,8 @@ module.exports = {
         detail: "detail@http://localhost:3002/remoteEntry.js",
       },
       shared: {
-        react: { singleton: true, requiredVersion: false },
-        "react-dom": { singleton: true, requiredVersion: false },
+        react: { singleton: true, eager: true },
+        "react-dom": { singleton: true, eager: true },
       },
     }),
     new HtmlWebpackPlugin({

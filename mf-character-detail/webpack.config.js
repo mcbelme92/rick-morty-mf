@@ -29,6 +29,10 @@ module.exports = {
         loader: "babel-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
     ],
   },
   resolve: {
@@ -42,8 +46,8 @@ module.exports = {
         "./DetailApp": "./src/App",
       },
       shared: {
-        react: { singleton: true },
-        "react-dom": { singleton: true },
+        react: { singleton: true, eager: true },
+        "react-dom": { singleton: true, eager: true },
       },
     }),
     new HtmlWebpackPlugin({

@@ -1,7 +1,5 @@
-const { resolve } = require("dns");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
-const path = require("path");
 
 module.exports = {
   mode: "development",
@@ -28,6 +26,10 @@ module.exports = {
         loader: "babel-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
     ],
   },
   resolve: {
@@ -41,8 +43,8 @@ module.exports = {
         "./CharactersApp": "./src/App",
       },
       shared: {
-        react: { singleton: true },
-        "react-dom": { singleton: true },
+        react: { singleton: true, eager: true },
+        "react-dom": { singleton: true, eager: true },
       },
     }),
     new HtmlWebpackPlugin({
