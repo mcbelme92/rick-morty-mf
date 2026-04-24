@@ -4,12 +4,21 @@ const { ModuleFederationPlugin } = require("webpack").container;
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
+
   devServer: {
     port: 3000,
     historyApiFallback: true,
+    hot: true,
+    liveReload: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    client: {
+      overlay: false,
+    },
   },
   output: {
-    publicPath: "http://localhost:3000/",
+    publicPath: "auto",
   },
   resolve: {
     extensions: [".js", ".jsx"],
@@ -21,8 +30,13 @@ module.exports = {
         loader: "babel-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
     ],
   },
+
   plugins: [
     new ModuleFederationPlugin({
       name: "shell",
