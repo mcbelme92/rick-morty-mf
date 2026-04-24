@@ -8,9 +8,19 @@ module.exports = {
   entry: "./src/index.js",
   devServer: {
     port: 3002,
+    historyApiFallback: true,
+    hot: false,
+    liveReload: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    client: {
+      overlay: false,
+    },
   },
+
   output: {
-    publicPath: "http://localhost:3002/",
+    publicPath: "auto",
   },
   module: {
     rules: [
