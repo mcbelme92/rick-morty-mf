@@ -46,8 +46,9 @@ module.exports = {
         "./DetailApp": "./src/App",
       },
       shared: {
-        react: { singleton: true, eager: true },
-        "react-dom": { singleton: true, eager: true },
+        react: { singleton: true, requiredVersion: false },
+        "react-dom": { singleton: true, requiredVersion: false },
+        "react-router-dom": { singleton: true, requiredVersion: false },
       },
     }),
     new HtmlWebpackPlugin({
