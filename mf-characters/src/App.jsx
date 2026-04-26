@@ -2,11 +2,13 @@ import React from "react";
 import "./index.css";
 import { characters } from "./data/dummy";
 import CharacterCard from "./components/characters/CharacterCard";
+import { useNavigate } from "react-router-dom";
 
 const App = () => {
   const handleClick = () => {
     console.log("Botón funcionando 🔥");
   };
+  const navigate = useNavigate();
 
   return (
     // 🔹 FONDO GLOBAL (ocupa todo)
@@ -14,7 +16,7 @@ const App = () => {
       {/* 🔹 CONTENIDO */}
       <div className="flex flex-wrap gap-6 justify-center p-6">
         {characters.map((char) => (
-          <CharacterCard key={char.id} character={char} />
+          <CharacterCard key={char.id} character={char} navigate={navigate} />
         ))}
       </div>
     </div>
