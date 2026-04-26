@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const CharacterCard = ({ character }) => {
+const CharacterCard = ({ character, navigate }) => {
   const { id, name, image, status, species, gender } = character;
 
   return (
@@ -39,11 +38,12 @@ const CharacterCard = ({ character }) => {
         </span>
 
         {/* Botón */}
-        <Link to={`/character/${id}`}>
-          <button className="mt-3 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg transition">
-            View Detail
-          </button>
-        </Link>
+        <button
+          className="mt-3 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg transition"
+          onClick={() => navigate(`/character/${character.id}`)}
+        >
+          View Detail
+        </button>
       </div>
     </div>
   );
