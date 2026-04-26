@@ -3,7 +3,7 @@ import CharacterCard from "./CharacterCard";
 
 const CharactersGrid = ({ characters }) => {
   const navigate = useNavigate();
-
+  console.log(characters);
   return (
     <div className="flex flex-wrap gap-6 justify-center p-6">
       {characters.map((character) => (
@@ -12,7 +12,7 @@ const CharactersGrid = ({ characters }) => {
           image={character.image}
           title={character.name}
           subtitle={`${character.species} • ${character.gender}`}
-          description={character.description}
+          description={character.location.name}
           character={character}
           navigate={navigate}
         />

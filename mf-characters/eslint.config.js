@@ -7,7 +7,13 @@ import importPlugin from "eslint-plugin-import";
 import { globalIgnores } from "eslint/config";
 
 export default [
-  globalIgnores(["dist", "node_modules"]),
+  globalIgnores([
+    "dist",
+    "node_modules",
+    "webpack.config.js",
+    "postcss.config.js",
+    "tailwind.config.js",
+  ]),
 
   {
     files: ["**/*.{js,jsx}"],
@@ -46,6 +52,9 @@ export default [
         version: "detect",
       },
       "import/resolver": {
+        node: {
+          extensions: [".js", ".jsx"],
+        },
         webpack: {
           config: "./webpack.config.js",
         },
