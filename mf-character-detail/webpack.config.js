@@ -1,4 +1,3 @@
-const { resolve } = require("dns");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
@@ -43,7 +42,7 @@ module.exports = {
       name: "detail",
       filename: "remoteEntry.js",
       exposes: {
-        "./DetailApp": "./src/App",
+        "./DetailApp": "./src/app/App",
       },
       shared: {
         react: { singleton: true, requiredVersion: false },

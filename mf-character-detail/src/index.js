@@ -1,2 +1,2 @@
 // index.js
-import("./bootstrap");
+import("./app/bootstrap");
