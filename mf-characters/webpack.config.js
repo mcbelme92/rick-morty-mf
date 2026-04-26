@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
+const path = require("path");
 
 module.exports = {
   mode: "development",
@@ -34,13 +35,22 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx"],
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+      "@app": path.resolve(__dirname, "src/app"),
+      "@components": path.resolve(__dirname, "src/components"),
+      "@ui": path.resolve(__dirname, "src/components/UI"),
+      "@features": path.resolve(__dirname, "src/features"),
+      "@data": path.resolve(__dirname, "src/data"),
+      "@styles": path.resolve(__dirname, "src/styles"),
+    },
   },
   plugins: [
     new ModuleFederationPlugin({
       name: "characters",
       filename: "remoteEntry.js",
       exposes: {
-        "./CharactersApp": "./src/App",
+        "./CharactersApp": "./src/app/App",
       },
       shared: {
         react: { singleton: true, requiredVersion: false },
