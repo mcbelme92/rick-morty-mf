@@ -1,13 +1,7 @@
-import React from "react";
-
+import CharacterDetailPage from "@features/character-detail/page/CharacterDetailPage";
+import "../index.css";
 const App = () => {
-  console.log("RUTA CARACTER DETALLE");
-  return (
-    <div>
-      <h2>Character Detail 🔍</h2>
-      <p>Aquí irá el detalle del personaje</p>
-    </div>
-  );
+  return <CharacterDetailPage />;
 };
 
 export default App;

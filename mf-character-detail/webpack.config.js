@@ -20,6 +20,7 @@ module.exports = {
 
   output: {
     publicPath: "auto",
+    uniqueName: "mf-character-detail",
   },
   module: {
     rules: [
@@ -36,6 +37,15 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx"],
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+      "@app": path.resolve(__dirname, "src/app"),
+      "@components": path.resolve(__dirname, "src/components"),
+      "@ui": path.resolve(__dirname, "src/components/UI"),
+      "@features": path.resolve(__dirname, "src/features"),
+      "@data": path.resolve(__dirname, "src/data"),
+      "@styles": path.resolve(__dirname, "src/styles"),
+    },
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -48,6 +58,10 @@ module.exports = {
         react: { singleton: true, requiredVersion: false },
         "react-dom": { singleton: true, requiredVersion: false },
         "react-router-dom": { singleton: true, requiredVersion: false },
+        "@tanstack/react-query": {
+          singleton: true,
+          requiredVersion: false,
+        },
       },
     }),
     new HtmlWebpackPlugin({

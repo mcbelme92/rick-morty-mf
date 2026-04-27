@@ -5,7 +5,17 @@
     "start": "webpack serve --mode development --open",
     "build": "webpack --mode production",
     "lint": "eslint src --ext .js,.jsx",
-    "lint:fix": "eslint src --ext .js,.jsx --fix"
+    "lint:fix": "eslint src --ext .js,.jsx --fix",
+    "test": "jest --watch"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
   },
   "keywords": [],
   "author": "",
@@ -25,7 +35,11 @@
     "@babel/preset-env": "^7.29.2",
     "@babel/preset-react": "^7.28.5",
     "@eslint/js": "^9.39.4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "autoprefixer": "^10.5.0",
+    "babel-jest": "^30.3.0",
     "babel-loader": "^10.1.1",
     "css-loader": "^7.1.4",
     "eslint": "^9.39.4",
@@ -37,6 +51,8 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.5.0",
     "html-webpack-plugin": "^5.6.7",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
     "postcss": "^8.5.10",
     "postcss-loader": "^8.2.1",
     "style-loader": "^4.0.0",

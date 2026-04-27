@@ -1,17 +1,9 @@
 const CharactersFilters = ({ filters, onChange, onReset }) => {
   return (
     <div className="flex flex-wrap gap-4 p-6 justify-center">
-      {/*   <input
-        name="name"
-        value={filters.name}
-        onChange={onChange}
-        placeholder="Search by name"
-        className="border rounded-lg p-2"
-      /> */}
-
       <select
         name="status"
-        value={filters.status}
+        value={filters?.status}
         onChange={onChange}
         className="border rounded-lg p-2"
       >
@@ -23,7 +15,7 @@ const CharactersFilters = ({ filters, onChange, onReset }) => {
 
       <select
         name="species"
-        value={filters.species}
+        value={filters?.species}
         onChange={onChange}
         className="border rounded-lg p-2"
       >

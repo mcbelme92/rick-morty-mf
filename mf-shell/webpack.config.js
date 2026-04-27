@@ -21,6 +21,7 @@ module.exports = {
   },
   output: {
     publicPath: "/",
+    uniqueName: "mf-shell",
   },
   resolve: {
     extensions: [".js", ".jsx"],
@@ -54,13 +55,16 @@ module.exports = {
       shared: {
         react: {
           singleton: true,
+          requiredVersion: false,
         },
         "react-dom": {
           singleton: true,
+          requiredVersion: false,
         },
-        "react-router-dom": { singleton: true },
+        "react-router-dom": { singleton: true, requiredVersion: false },
         "@tanstack/react-query": {
           singleton: true,
+          requiredVersion: false,
         },
       },
     }),

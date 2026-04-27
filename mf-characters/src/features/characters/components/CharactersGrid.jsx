@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const CharactersGrid = ({ characters }) => {
   const navigate = useNavigate();
-  console.log(characters);
+
   return (
     <div
       className="
