@@ -6,7 +6,7 @@ const EpisodesList = ({ episodes = [] }) => {
       className="
         flex-1
         min-w-0
-        h-[72vh]
+        min-h-[72vh]
         flex
         flex-col
         overflow-hidden
