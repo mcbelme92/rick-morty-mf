@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Navbar() {
+export default function Navbar({ search, onSearchChange }) {
   const toggleDark = () => {
     document.documentElement.classList.toggle("dark");
   };
@@ -22,6 +22,8 @@ export default function Navbar() {
                 type="text"
                 placeholder="Search character..."
                 className="px-6 py-2 w-full bg-white text-black dark:bg-slate-800 dark:text-white outline-none"
+                value={search}
+                onChange={(e) => onSearchChange(e.target.value)}
               />
 
               <button className="bg-blue-500 text-white text-[22px] px-4 grid place-items-center hover:bg-blue-600">

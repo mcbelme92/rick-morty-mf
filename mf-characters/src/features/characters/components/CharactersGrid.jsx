@@ -1,5 +1,5 @@
+import CharacterCard from "@/features/characters/components/CharacterCard";
 import { useNavigate } from "react-router-dom";
-import CharacterCard from "./CharacterCard";
 
 const CharactersGrid = ({ characters }) => {
   const navigate = useNavigate();
