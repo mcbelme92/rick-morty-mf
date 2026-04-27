@@ -29,14 +29,8 @@ const CharactersPage = ({ externalSearch, onClearSearch }) => {
         ? debouncedName
         : "",
   };
-  console.log(queryFilters.name);
-  const { data, isLoading, isFetching, isError } = useCharacters(queryFilters);
-  console.log({
-    externalSearch,
 
-    debouncedName,
-    queryFilters,
-  });
+  const { data, isLoading, isFetching, isError } = useCharacters(queryFilters);
 
   return (
     <section className="w-full min-h-screen  dark:bg-slate-800">

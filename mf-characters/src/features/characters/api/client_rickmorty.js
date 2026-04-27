@@ -1,7 +1,8 @@
+import { API } from "@/features/characters/api/constants";
 import axios from "axios";
 
 export const client_rickmorty = axios.create({
-  baseURL: "https://rickandmortyapi.com/api",
+  baseURL: API.BASE_URL,
   timeout: 10000,
 });
 

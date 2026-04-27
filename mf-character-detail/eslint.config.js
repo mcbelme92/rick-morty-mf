@@ -46,9 +46,6 @@ export default [
       "no-unused-vars": "warn",
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
-      env: {
-        jest: true,
-      },
     },
 
     settings: {

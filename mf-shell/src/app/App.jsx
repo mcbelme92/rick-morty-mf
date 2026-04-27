@@ -1,8 +1,8 @@
 import React, { Suspense, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import "./index.css";
-import Layout from "@/components/Layout";
+import "../index.css";
+import { Layout } from "@/features/shell/components";
 
 const USE_MF = true;
 

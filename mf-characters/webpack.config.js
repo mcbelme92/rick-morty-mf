@@ -19,6 +19,7 @@ module.exports = {
   },
   output: {
     publicPath: "auto",
+    uniqueName: "mf-characters",
   },
   module: {
     rules: [

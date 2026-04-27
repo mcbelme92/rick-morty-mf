@@ -50,6 +50,7 @@ export default [
       "react/jsx-no-undef": "error",
       "no-unused-vars": "warn",
       "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
     },
 
     settings: {
