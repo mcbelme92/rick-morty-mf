@@ -34,7 +34,7 @@ const CharactersFilters = ({ filters, onChange, onReset }) => {
 
       <button
         onClick={onReset}
-        className="px-4 py-2 rounded-lg bg-slate-800 text-white"
+        className="px-4 py-2 rounded-lg bg-success text-white"
       >
         Reset
       </button>
