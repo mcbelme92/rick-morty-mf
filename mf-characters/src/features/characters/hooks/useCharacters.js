@@ -1,28 +1,38 @@
+import { getCharacters } from "@/features/characters/api/characters.service";
 import { useQuery } from "@tanstack/react-query";
-import { getCharacters } from "../api/characters.service";
 
-export function useCharacters(filters = {}) {
-  const { page = 1, name = "", status = "", species = "" } = filters;
-
+export function useCharacters(filters) {
   return useQuery({
-    queryKey: ["characters", page, name, status, species],
+    queryKey: [
+      "characters",
+      filters.page,
+      filters.name,
+      filters.status,
+      filters.species,
+    ],
 
     queryFn: async () => {
-      const { data } = await getCharacters({
-        page,
-        name,
-        status,
-        species,
-      });
+      try {
+        const { data } = await getCharacters(filters);
+        return data;
+      } catch (error) {
+        // si es 404 no es "error", solo vacío
+        if (error?.response?.status === 404) {
+          return {
+            results: [],
+            info: null,
+          };
+        }
 
-      return data;
+        throw error;
+      }
     },
+    enabled: !filters.name || filters.name.length >= 3,
 
-    placeholderData: (prev) => prev,
-
-    retry: (count, error) => {
-      if (error?.response?.status === 429) return false;
-      return error?.response?.status >= 500 && count < 2;
-    },
+    staleTime: 1000 * 60 * 30,
+    gcTime: 1000 * 60 * 60,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    retry: false,
   });
 }

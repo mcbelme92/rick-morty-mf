@@ -1,11 +1,12 @@
 {
-  "name": "mf-characters",
+  "name": "mf-Shell",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "lint": "eslint src --ext .js,.jsx",
+    "lint:fix": "eslint src --ext .js,.jsx --fix"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,15 @@
     "autoprefixer": "^10.5.0",
     "babel-loader": "^10.1.1",
     "css-loader": "^7.1.4",
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.39.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "eslint-import-resolver-node": "^0.3.10",
+    "eslint-import-resolver-webpack": "^0.13.11",
+    "globals": "^17.5.0",
     "html-webpack-plugin": "^5.6.7",
     "postcss": "^8.5.10",
     "postcss-loader": "^8.2.1",

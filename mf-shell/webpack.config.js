@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
+const path = require("path");
 
 module.exports = {
   mode: "development",
@@ -23,6 +24,11 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx"],
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+      "@components": path.resolve(__dirname, "src/components"),
+      "@app": path.resolve(__dirname, "src/app"),
+    },
   },
   module: {
     rules: [
