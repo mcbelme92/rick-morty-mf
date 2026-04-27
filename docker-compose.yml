@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  mf-shell:
+    build: ./mf-shell
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./mf-shell:/app
+      - /app/node_modules
+
+  mf-characters:
+    build: ./mf-characters
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./mf-characters:/app
+      - /app/node_modules
+
+  mf-character-detail:
+    build: ./mf-character-detail
+    ports:
+      - "3002:3002"
+    volumes:
+      - ./mf-character-detail:/app
+      - /app/node_modules

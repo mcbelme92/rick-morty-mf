@@ -7,6 +7,7 @@ module.exports = {
   entry: "./src/index.js",
 
   devServer: {
+    host: "0.0.0.0",
     port: 3000,
     historyApiFallback: true,
     hot: true,
@@ -20,7 +21,7 @@ module.exports = {
     watchFiles: ["src/**/*"],
   },
   output: {
-    publicPath: "/",
+    publicPath: "auto",
     uniqueName: "mf-shell",
   },
   resolve: {
@@ -52,6 +53,10 @@ module.exports = {
         characters: "characters@http://localhost:3001/remoteEntry.js",
         detail: "detail@http://localhost:3002/remoteEntry.js",
       },
+      /*  remotes: {
+        characters: "characters@http://mf-characters:3001/remoteEntry.js",
+        detail: "detail@http://mf-character-detail:3002/remoteEntry.js",
+      }, */
       shared: {
         react: {
           singleton: true,
