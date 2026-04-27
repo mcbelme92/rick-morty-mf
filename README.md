@@ -96,7 +96,7 @@ Proyecto construido como prueba técnica enfocada en:
 
 ---
 
-# 🚀 Arquitectura utilizada
+# Arquitectura utilizada
 
 Se implementó una arquitectura **Microfrontend con Module Federation (Host/Remote Pattern)**.
 
@@ -160,7 +160,7 @@ El shell consume remotes dinámicamente mediante `remoteEntry.js`.
 
 ---
 
-# 🛠️ Stack Tecnológico
+# Stack Tecnológico
 
 - React 18
 - Webpack 5
@@ -172,7 +172,7 @@ El shell consume remotes dinámicamente mediante `remoteEntry.js`.
 
 ---
 
-# 🧪 Pruebas
+#  Pruebas(Test)
 
 Se agregaron pruebas unitarias para:
 
@@ -196,7 +196,7 @@ Valida:
 
 ---
 
-# 🐳 Dockerización
+#  Dockerización
 
 Cada microfrontend cuenta con:
 
@@ -299,7 +299,7 @@ npm start
 
 ---
 
-# 🔀 Rutas
+#  Rutas
 
 ```bash
 /                -> Characters
@@ -309,7 +309,7 @@ npm start
 
 ---
 
-# 📌 Objetivo del proyecto
+#  Objetivo del proyecto
 
 Demostrar:
 
@@ -322,7 +322,7 @@ Demostrar:
 
 ---
 
-# ✅ Estado del proyecto
+# Estado del proyecto
 
 - ✔ Arquitectura Microfrontend
 - ✔ Module Federation
@@ -335,7 +335,7 @@ Demostrar:
 
 ---
 
-# 🧱 Organización interna y patrón de diseño por microfrontend
+#  Organización interna y patrón de diseño por microfrontend
 
 Cada microfrontend sigue una combinación de:
 
@@ -366,7 +366,7 @@ Cada microfrontend encapsula su propio dominio.
 
 ---
 
-# 🧩 Arquitectura por capas (Layered Architecture)
+#  Arquitectura por capas (Layered Architecture)
 
 Dentro de cada feature se separaron responsabilidades por capas.
 
@@ -454,7 +454,7 @@ Favorece consistencia visual.
 
 ---
 
-# 🎯 Patrones aplicados
+#  Patrones aplicados
 
 ## Container / Presentational Pattern
 
