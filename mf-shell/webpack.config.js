@@ -9,17 +9,26 @@ module.exports = {
   devServer: {
     host: "0.0.0.0",
     port: 3000,
-    historyApiFallback: true,
+
+    historyApiFallback: {
+      disableDotRule: true,
+      index: "/index.html",
+    },
+
     hot: true,
     liveReload: true,
+
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
+
     client: {
       overlay: false,
     },
+
     watchFiles: ["src/**/*"],
   },
+
   output: {
     publicPath: "auto",
     uniqueName: "mf-shell",
@@ -75,6 +84,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      publicPath: "/",
     }),
   ],
 };

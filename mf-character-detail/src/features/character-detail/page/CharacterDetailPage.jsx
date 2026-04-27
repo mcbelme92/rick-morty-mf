@@ -16,6 +16,10 @@ const CharacterDetailPage = () => {
     return <div className="p-8">Loading detail...</div>;
   }
 
+  if (!character || !episodes.length) {
+    return null;
+  }
+
   if (isError) {
     return <div className="p-8">Error loading character</div>;
   }
