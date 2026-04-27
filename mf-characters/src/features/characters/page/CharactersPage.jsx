@@ -39,7 +39,7 @@ const CharactersPage = ({ externalSearch, onClearSearch }) => {
   });
 
   return (
-    <section className="w-full min-h-screen bg-gray-100 dark:bg-slate-800">
+    <section className="w-full min-h-screen  dark:bg-slate-800">
       <CharactersFilters
         filters={filters}
         onChange={handleChange}
